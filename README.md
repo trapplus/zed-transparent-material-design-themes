@@ -1,57 +1,65 @@
-# Transparent Dark Glass Theme
+# Material Prism
 
-A translucent dark theme for Zed editor, based on Zedokai Darker (Filter Spectrum) with custom blurred backgrounds and transparency effects.
+A collection of translucent dark themes for [Zed](https://zed.dev) with frosted glass blur, built on the [Material Design 3](https://m3.material.io/styles/color/system/overview) color system.
 
-## Features
+Originally based on [dark-glass-theme](https://github.com/magnuspladsen/dark-glass-theme) by Magnus Pladsen (which itself is based on Zedokai by slymax).
 
-- Blurred translucent backgrounds for a modern glass-like appearance
-- Based on the popular Zedokai Darker (Filter Spectrum) color scheme
-- Carefully tuned transparency levels for optimal readability
-- Custom styling for editor, panels, terminal, and UI elements
+## Variants
+
+| Name | Background tint |
+|---|---|
+| Material Prism | Neutral dark |
+| Material Prism - Pink | Warm rose |
+| Material Prism - Indigo | Deep blue |
+| Material Prism - Teal | Cool green |
+| Material Prism - Amber | Warm amber |
+| Material Prism - Deep Purple | Rich violet |
+| Material Prism - Blue Grey | Cool grey |
+| Material Prism - Brown | Warm brown |
+
+## Setup
+
+The theme works out of the box in Zed, but to get the frosted glass blur effect you need a compositor that supports it.
+
+### Hyprland
+
+Add to your `hyprland.conf`:
+
+```ini
+decoration {
+    blur {
+        enabled = true
+        size = 8
+        passes = 2
+        ignore_opacity = true
+        new_optimizations = true
+        xray = false
+    }
+}
+```
+
+Make sure `no_blur` is not applied globally to all windows. If you use a dots config like [end-4/dots-hyprland](https://github.com/end-4/dots-hyprland), comment out the line:
+
+```ini
+# windowrule = match:class .*, no_blur on
+```
+
+### KDE Plasma
+
+Enable **Blur** in System Settings → Desktop Effects → Blur.
 
 ## Installation
 
-### From Zed Extensions
-
-Once published, you can install this theme directly from Zed:
-
-1. Open Zed
-2. Press `cmd+shift+p` to open the command palette
-3. Type "extensions" and select "zed: extensions"
-4. Search for "Transparent Dark Glass Theme"
-5. Click Install
-
-### Manual Installation (Development)
-
-1. Clone this repository
-2. Open Zed
-3. Press `cmd+shift+p` and select "zed: extensions"
-4. Click "Install Dev Extension"
-5. Select the cloned directory
-
-## Usage
-
-After installation:
-
-1. Press `cmd+k, cmd+t` to open theme selector
-2. Search for "Transparent Dark Glass"
-3. Select the theme
-
-Or set it in your settings:
+Search for **Material Prism** in the Zed extension marketplace, or add manually to `~/.config/zed/settings.json`:
 
 ```json
 {
-  "theme": {
-    "mode": "system",
-    "dark": "Transparent Dark Glass"
-  }
+  "theme": "Material Prism - Deep Purple"
 }
 ```
 
 ## Credits
 
-Based on [Zedokai](https://github.com/slymax/zedokai) by slymax, which is inspired by Monokai Pro.
-
-## License
-
-MIT License - See LICENSE file for details
+- [Magnus Pladsen](https://github.com/magnuspladsen) — original dark-glass-theme
+- [slymax](https://github.com/slymax) — Zedokai (original base theme)
+- [trapplus](https://github.com/trapplus) — Material Design 3 adaptation
