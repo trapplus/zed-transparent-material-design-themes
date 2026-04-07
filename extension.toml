@@ -9,5 +9,4 @@ authors = [
 ]
 repository = "https://github.com/trapplus/material-prism-theme"
 
-[themes]
-path = "themes"
+themes = ["themes/theme.json"]
